@@ -31,6 +31,9 @@ function MoviewList() {
         <Movie />
         <Movie />
         <Movie />
+        <Movie />
+        <Movie />
+        <Movie />
       </div>
     </div>
   );
