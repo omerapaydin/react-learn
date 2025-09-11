@@ -46,21 +46,14 @@ function MoviewList() {
     <div>
       <h1>Moview List</h1>
       <div id="movie-list">
-        <Movie
-          image={movie_list[0].image}
-          title={movie_list[0].baslik}
-          description={movie_list[0].aciklama}
-        />
-        <Movie
-          image={movie_list[1].image}
-          title={movie_list[1].baslik}
-          description={movie_list[1].aciklama}
-        />
-        <Movie
-          image={movie_list[2].image}
-          title={movie_list[2].baslik}
-          description={movie_list[2].aciklama}
-        />
+        {movie_list.map((movie, index) => (
+          <Movie
+            key={index}
+            image={movie.image}
+            baslik={movie.baslik}
+            aciklama={movie.aciklama}
+          />
+        ))}
       </div>
     </div>
   );
