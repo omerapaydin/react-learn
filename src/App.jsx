@@ -24,26 +24,54 @@ function Header() {
   );
 }
 function MoviewList() {
+  const movie_list = [
+    {
+      image: "1.jpg",
+      baslik: "Kaptan Amerika",
+      aciklama: "Güzel bir film",
+    },
+    {
+      image: "2.jpg",
+      baslik: "Araba Hırsızları",
+      aciklama: "Güzel bir film",
+    },
+    {
+      image: "3.jpg",
+      baslik: "Araba Hırsızları",
+      aciklama: "Güzel bir film",
+    },
+  ];
+
   return (
     <div>
       <h1>Moview List</h1>
       <div id="movie-list">
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
+        <Movie
+          image={movie_list[0].image}
+          title={movie_list[0].baslik}
+          description={movie_list[0].aciklama}
+        />
+        <Movie
+          image={movie_list[1].image}
+          title={movie_list[1].baslik}
+          description={movie_list[1].aciklama}
+        />
+        <Movie
+          image={movie_list[2].image}
+          title={movie_list[2].baslik}
+          description={movie_list[2].aciklama}
+        />
       </div>
     </div>
   );
 }
 
-function Movie() {
+function Movie(props) {
   return (
     <div className="movie">
-      <h3>Movie</h3>
-      <p>Film açıklaması</p>
+      <img src={"/img/" + props.image} alt="" />
+      <h3>{props.baslik}</h3>
+      <p>{props.aciklama}</p>
     </div>
   );
 }
