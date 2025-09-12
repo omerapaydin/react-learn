@@ -40,6 +40,11 @@ function MoviewList() {
       baslik: "Araba Hırsızları",
       aciklama: "Güzel bir film",
     },
+    {
+      image: "4.jpg",
+      baslik: "Araba Hırsızları",
+      aciklama: "Güzel bir film",
+    },
   ];
 
   return (
@@ -47,24 +52,19 @@ function MoviewList() {
       <h1>Moview List</h1>
       <div id="movie-list">
         {movie_list.map((movie, index) => (
-          <Movie
-            key={index}
-            image={movie.image}
-            baslik={movie.baslik}
-            aciklama={movie.aciklama}
-          />
+          <Movie key={index} movieObj={movie} />
         ))}
       </div>
     </div>
   );
 }
 
-function Movie(props) {
+function Movie({ movieObj }) {
   return (
     <div className="movie">
-      <img src={"/img/" + props.image} alt="" />
-      <h3>{props.baslik}</h3>
-      <p>{props.aciklama}</p>
+      <img src={"/img/" + movieObj.image} alt="" />
+      <h3>{movieObj.baslik}</h3>
+      <p>{movieObj.aciklama}</p>
     </div>
   );
 }
